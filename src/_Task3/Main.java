@@ -1,18 +1,23 @@
 package _Task3;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        UserСontacts userСontacts = new UserСontacts();
+        UserData data = new UserData();
+        System.out.println("Initial contacts:");
+        printContact(data.getAllContacts());
+        System.out.println("Updated contacts:");
+        printContact(data.updateContacts("Tom", "tomasdev@glob.net"));
 
-        Map<String, String> allContacts = userСontacts.getAllContacts();
-        allContacts.forEach( (k, v) -> System.out.println(k + " " + v));
-
-        System.out.println("___________");
-        Map<String, String> update = userСontacts.updateContacts("Tom", "tomasdev@glob.net");
-        update.forEach((k,v)-> System.out.println(k + " " + v));
-
+    }
+    public static void printContact(LinkedHashMap<String, String> contact){
+        int count = 1;
+        for (Map.Entry<String, String> cont: contact.entrySet()){
+            System.out.println(count + ") " + cont.getKey() + " " + cont.getValue());
+            count++;
+        }
 
     }
 }

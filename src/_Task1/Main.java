@@ -14,7 +14,6 @@ public class Main {
     public static void showProductList(Map<String, Integer> productList){
         StringBuilder stringBuilder = new StringBuilder();
         int cont = 1;
-
         for (Map.Entry<String, Integer> products: productList.entrySet()){
             System.out.println(cont + ") "+products.getKey() + ", " + products.getValue() + " kg");
             cont++;

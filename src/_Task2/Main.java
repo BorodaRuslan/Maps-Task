@@ -12,14 +12,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter phone model");
         String phoneModel = scanner.nextLine();
-
         if (!listProduct.containsKey(phoneModel)){
             return phoneModel + " not found";
         } else {
             return phoneModel + " price: " + listProduct.get(phoneModel) + " $";
         }
     }
-
     public static void printProduct(String product){
         System.out.println(product);
     }
